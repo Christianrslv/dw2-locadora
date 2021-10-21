@@ -1,0 +1,54 @@
+/*.sidenav {
+  width: 170px;
+  background-color: #138ef3;
+}
+
+.sidenav a {
+  color: #fff;
+}
+
+.sidenav i {
+  padding-right: 10px;
+}
+
+.content {
+  padding: 16px;
+  background-color: #fff;
+}*/
+
+.example-container {
+  height: 81%;
+}
+
+button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  border: none;
+  top: 46%;
+  background-color: transparent;
+}
+
+button :hover{
+  padding-left: 5px;
+  transition: 4ms;
+}
+
+.example-sidenav {
+  width: 170px;
+  background-color: #138ef3;
+}
+
+.example-sidenav a {
+  color: #fff;
+}
+
+.example-sidenav i {
+  padding-right: 10px;
+}
+
+.content {
+  padding: 0px;
+  background-color: #fff;
+}
+
