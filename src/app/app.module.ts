@@ -65,6 +65,8 @@ import { ProductUpdateComponent } from './components/product/product-update/prod
 import { ActorCrudComponent } from './views/actor-crud/actor-crud.component';
 import { ActorCreateComponent } from './components/actor/actor-create/actor-create.component';
 import { ActorReadComponent } from './components/actor/actor-read/actor-read.component';
+import { ActorUpdateComponent } from './components/actor/actor-update/actor-update.component';
+import { ActorDeleteComponent } from './components/actor/actor-delete/actor-delete.component';
 
 @NgModule({
   exports: [
@@ -129,7 +131,9 @@ import { ActorReadComponent } from './components/actor/actor-read/actor-read.com
     ProductUpdateComponent,
     ActorCrudComponent,
     ActorCreateComponent,
-    ActorReadComponent
+    ActorReadComponent,
+    ActorUpdateComponent,
+    ActorDeleteComponent
   ],
   imports: [
     BrowserModule,

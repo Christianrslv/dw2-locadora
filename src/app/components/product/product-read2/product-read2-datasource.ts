@@ -42,14 +42,14 @@ const EXAMPLE_DATA: ProductRead2Item[] = [
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class ProductRead2DataSource extends DataSource<Product> {
-  data: Product[];
+export class ProductRead2DataSource extends DataSource<ProductRead2Item> {
+  data: ProductRead2Item[];
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor(products: Product[]) {
+  constructor() {
     super();
-    this.data = products;
+    this.data = EXAMPLE_DATA;
   }
 
   /**
@@ -57,7 +57,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<Product[]> {
+  connect(): Observable<ProductRead2Item[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
@@ -81,7 +81,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: Product[]) {
+  private getPagedData(data: ProductRead2Item[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -90,7 +90,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: Product[]) {
+  private getSortedData(data: ProductRead2Item[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -100,7 +100,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
-        case 'price' : return compare(+a.price, +b.price, isAsc)
+        case 'price' : return compare(+a.price, +b.price, isAsc);
         default: return 0;
       }
     });

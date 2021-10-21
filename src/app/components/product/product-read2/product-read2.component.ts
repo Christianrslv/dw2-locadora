@@ -1,12 +1,12 @@
-import { Router } from '@angular/router';
-import { AfterViewInit, Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
-import { ProductRead2DataSource } from './product-read2-datasource';
-import { ProductService } from './../product.service';
-import { Product } from './../product.model';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import {Router} from '@angular/router';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTable} from '@angular/material/table';
+import {ProductRead2DataSource, ProductRead2Item} from './product-read2-datasource';
+import {ProductService} from './../product.service';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+
 @Component({
   selector: 'app-product-read2',
   templateUrl: './product-read2.component.html',
@@ -15,9 +15,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class ProductRead2Component implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<Product>;
+  @ViewChild(MatTable) table: MatTable<ProductRead2Item>;
   dataSource: ProductRead2DataSource;
-  products: Product[];
+  products: ProductRead2Item[];
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['name', 'price', 'action'];
 
@@ -25,21 +25,22 @@ export class ProductRead2Component implements OnInit {
               private dialog: MatDialog,
               private router: Router) { }
 
-  ngOnInit() {
-    this.productService.read().subscribe(products => {
-      this.products = products;
-      this.afterLoadProducts();
-    });
+  ngOnInit(): void{
+    // this.productService.read().subscribe(products => {
+    //   this.products = products;
+    //   this.afterLoadProducts();
+    // });
   }
 
-  afterLoadProducts() {
-    this.dataSource = new ProductRead2DataSource(this.products);
+  afterLoadProducts(): void {
+    this.dataSource = new ProductRead2DataSource();
+    console.log(this.dataSource.data);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
 
-  deleteProduct(id: string) {
+  deleteProduct(id: string): void {
     const dialogRef = this.dialog.open(DialogConfirmationDelete, {
       width: '400px',
     });
@@ -47,7 +48,7 @@ export class ProductRead2Component implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.productService.delete(id).subscribe(() => {
-          this.productService.showMessage("Product Delete!");
+          this.productService.showMessage('Product Delete!');
         });
       }
     });
