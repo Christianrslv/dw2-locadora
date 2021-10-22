@@ -7,7 +7,7 @@ import {ActorDataSource} from './actor-read-datasource';
 import {MatDialog} from '@angular/material/dialog';
 import {Router} from '@angular/router';
 import {ActorService} from '../actor.service';
-import {DialogConfirmationDelete} from '../../product/product-read2/product-read2.component';
+import {ActorDeleteComponent} from '../actor-delete/actor-delete.component';
 
 @Component({
   selector: 'app-actor-read',
@@ -43,14 +43,14 @@ export class ActorReadComponent implements OnInit {
   }
 
   deleteProduct(id: string): void {
-    const dialogRef = this.dialog.open(DialogConfirmationDelete, {
+    const dialogRef = this.dialog.open(ActorDeleteComponent, {
       width: '400px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.actorService.delete(id).subscribe(() => {
-          this.actorService.showMessage('Product Delete!');
+          this.actorService.showMessage('Ator removido com sucesso!');
         });
       }
     });

@@ -8,6 +8,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './views/home/home.component';
 import {ProductCrudComponent} from './views/product-crud/product-crud.component';
 import {ActorUpdateComponent} from './components/actor/actor-update/actor-update.component';
+import {DirectorCreateComponent} from './components/director/director-create/director-create.component';
+import {DirectorUpdateComponent} from './components/director/director-update/director-update.component';
+import {DirectorCrudComponent} from './views/director-crud/director-crud.component';
 
 const routes: Routes = [{
   path: '',
@@ -34,8 +37,20 @@ const routes: Routes = [{
     component: ActorCreateComponent
   },
   {
-    path: 'actor/update',
+    path: 'actor/update/:id',
     component: ActorUpdateComponent
+  },
+  {
+    path: 'director',
+    component: DirectorCrudComponent
+  },
+  {
+    path: 'director/create',
+    component: DirectorCreateComponent
+  },
+  {
+    path: 'director/update/:id',
+    component: DirectorUpdateComponent
   }
 ];
 

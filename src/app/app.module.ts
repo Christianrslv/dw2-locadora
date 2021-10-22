@@ -67,6 +67,11 @@ import { ActorCreateComponent } from './components/actor/actor-create/actor-crea
 import { ActorReadComponent } from './components/actor/actor-read/actor-read.component';
 import { ActorUpdateComponent } from './components/actor/actor-update/actor-update.component';
 import { ActorDeleteComponent } from './components/actor/actor-delete/actor-delete.component';
+import { DirectorCreateComponent } from './components/director/director-create/director-create.component';
+import { DirectorReadComponent } from './components/director/diretor-read/director-read.component';
+import { DirectorUpdateComponent } from './components/director/director-update/director-update.component';
+import { DirectorDeleteComponent } from './components/director/director-delete/director-delete.component';
+import { DirectorCrudComponent } from './views/director-crud/director-crud.component';
 
 @NgModule({
   exports: [
@@ -133,7 +138,12 @@ import { ActorDeleteComponent } from './components/actor/actor-delete/actor-dele
     ActorCreateComponent,
     ActorReadComponent,
     ActorUpdateComponent,
-    ActorDeleteComponent
+    ActorDeleteComponent,
+    DirectorCreateComponent,
+    DirectorReadComponent,
+    DirectorUpdateComponent,
+    DirectorDeleteComponent,
+    DirectorCrudComponent
   ],
   imports: [
     BrowserModule,
