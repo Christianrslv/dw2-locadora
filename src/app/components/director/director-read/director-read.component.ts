@@ -34,18 +34,18 @@ export class DirectorReadComponent implements OnInit {
   ngOnInit(): void {
     this.directorService.read().subscribe(directors => {
       this.directors = directors;
-      this.afterLoadProducts();
+      this.afterLoadDirectors();
     });
   }
 
-  afterLoadProducts(): void {
+  afterLoadDirectors(): void {
     this.dataSource = new DirectorDataSource(this.directors);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
 
-  deleteProduct(id: string): void {
+  deleteDirector(id: string): void {
     const dialogRef = this.dialog.open(DirectorDeleteComponent, {
       width: '400px',
     });
@@ -58,5 +58,4 @@ export class DirectorReadComponent implements OnInit {
       }
     });
   }
-
 }

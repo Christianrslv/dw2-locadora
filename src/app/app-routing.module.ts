@@ -11,6 +11,9 @@ import {ActorUpdateComponent} from './components/actor/actor-update/actor-update
 import {DirectorCreateComponent} from './components/director/director-create/director-create.component';
 import {DirectorUpdateComponent} from './components/director/director-update/director-update.component';
 import {DirectorCrudComponent} from './views/director-crud/director-crud.component';
+import {ClasseCrudComponent} from './views/classe-crud/classe-crud.component';
+import {ClasseCreateComponent} from './components/classe/classe-create/classe-create.component';
+import {ClasseUpdateComponent} from './components/classe/classe-update/classe-update.component';
 
 const routes: Routes = [{
   path: '',
@@ -51,6 +54,18 @@ const routes: Routes = [{
   {
     path: 'director/update/:id',
     component: DirectorUpdateComponent
+  },
+  {
+    path: 'classe',
+    component: ClasseCrudComponent
+  },
+  {
+    path: 'classe/create',
+    component: ClasseCreateComponent
+  },
+  {
+    path: 'classe/update/:id',
+    component: ClasseUpdateComponent
   }
 ];
 

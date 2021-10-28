@@ -1,29 +1,29 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing.module';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/template/header/header.component';
-import { FooterComponent } from './components/template/footer/footer.component';
-import { NavComponent } from './components/template/nav/nav.component';
-import { ForDirective } from './directives/for.directive';
-import { ProductCreateComponent } from './components/product/product-create/product-create.component'
-import { ProductCrudComponent } from './views/product-crud/product-crud.component';
-import { GrayDirective } from './directives/gray.directive';
-import { HomeComponent } from './views/home/home.component';
-import { ProductReadComponent } from './components/product/product-read/product-read.component';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HeaderComponent} from './components/template/header/header.component';
+import {FooterComponent} from './components/template/footer/footer.component';
+import {NavComponent} from './components/template/nav/nav.component';
+import {ForDirective} from './directives/for.directive';
+import {ProductCreateComponent} from './components/product/product-create/product-create.component';
+import {ProductCrudComponent} from './views/product-crud/product-crud.component';
+import {GrayDirective} from './directives/gray.directive';
+import {HomeComponent} from './views/home/home.component';
+import {ProductReadComponent} from './components/product/product-read/product-read.component';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatCardModule } from '@angular/material/card';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
@@ -60,18 +60,24 @@ import {CdkStepperModule} from '@angular/cdk/stepper';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
-import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
-import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
-import { ActorCrudComponent } from './views/actor-crud/actor-crud.component';
-import { ActorCreateComponent } from './components/actor/actor-create/actor-create.component';
-import { ActorReadComponent } from './components/actor/actor-read/actor-read.component';
-import { ActorUpdateComponent } from './components/actor/actor-update/actor-update.component';
-import { ActorDeleteComponent } from './components/actor/actor-delete/actor-delete.component';
-import { DirectorCreateComponent } from './components/director/director-create/director-create.component';
-import { DirectorReadComponent } from './components/director/diretor-read/director-read.component';
-import { DirectorUpdateComponent } from './components/director/director-update/director-update.component';
-import { DirectorDeleteComponent } from './components/director/director-delete/director-delete.component';
-import { DirectorCrudComponent } from './views/director-crud/director-crud.component';
+import {ProductRead2Component} from './components/product/product-read2/product-read2.component';
+import {ProductUpdateComponent} from './components/product/product-update/product-update.component';
+import {ActorCrudComponent} from './views/actor-crud/actor-crud.component';
+import {ActorCreateComponent} from './components/actor/actor-create/actor-create.component';
+import {ActorReadComponent} from './components/actor/actor-read/actor-read.component';
+import {ActorUpdateComponent} from './components/actor/actor-update/actor-update.component';
+import {ActorDeleteComponent} from './components/actor/actor-delete/actor-delete.component';
+import {DirectorCreateComponent} from './components/director/director-create/director-create.component';
+import {DirectorReadComponent} from './components/director/director-read/director-read.component';
+import {DirectorUpdateComponent} from './components/director/director-update/director-update.component';
+import {DirectorDeleteComponent} from './components/director/director-delete/director-delete.component';
+import {DirectorCrudComponent} from './views/director-crud/director-crud.component';
+import {ClasseCrudComponent} from './views/classe-crud/classe-crud.component';
+import {ClasseCreateComponent} from './components/classe/classe-create/classe-create.component';
+import {ClasseDeleteComponent} from './components/classe/classe-delete/classe-delete.component';
+import {ClasseUpdateComponent} from './components/classe/classe-update/classe-update.component';
+import {ClasseReadComponent} from './components/classe/classe-read/classe-read.component';
+import { TitleCrudComponent } from './views/title-crud/title-crud.component';
 
 @NgModule({
   exports: [
@@ -143,7 +149,13 @@ import { DirectorCrudComponent } from './views/director-crud/director-crud.compo
     DirectorReadComponent,
     DirectorUpdateComponent,
     DirectorDeleteComponent,
-    DirectorCrudComponent
+    DirectorCrudComponent,
+    ClasseCrudComponent,
+    ClasseCreateComponent,
+    ClasseDeleteComponent,
+    ClasseUpdateComponent,
+    ClasseReadComponent,
+    TitleCrudComponent
   ],
   imports: [
     BrowserModule,
@@ -161,9 +173,18 @@ import { DirectorCrudComponent } from './views/director-crud/director-crud.compo
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDatepickerModule,
+
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

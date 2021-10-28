@@ -31,18 +31,18 @@ export class ActorReadComponent implements OnInit {
   ngOnInit(): void {
     this.actorService.read().subscribe(actors => {
       this.actors = actors;
-      this.afterLoadProducts();
+      this.afterLoadActors();
     });
   }
 
-  afterLoadProducts(): void {
+  afterLoadActors(): void {
     this.dataSource = new ActorDataSource(this.actors);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
   }
 
-  deleteProduct(id: string): void {
+  deleteActor(id: string): void {
     const dialogRef = this.dialog.open(ActorDeleteComponent, {
       width: '400px',
     });
