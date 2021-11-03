@@ -14,6 +14,12 @@ import {DirectorCrudComponent} from './views/director-crud/director-crud.compone
 import {ClasseCrudComponent} from './views/classe-crud/classe-crud.component';
 import {ClasseCreateComponent} from './components/classe/classe-create/classe-create.component';
 import {ClasseUpdateComponent} from './components/classe/classe-update/classe-update.component';
+import {TitleCrudComponent} from './views/title-crud/title-crud.component';
+import {TitleCreateComponent} from './components/title/title-create/title-create.component';
+import {TitleUpdateComponent} from './components/title/title-update/title-update.component';
+import {ItemCrudComponent} from './views/item-crud/item-crud.component';
+import {ItemCreateComponent} from './components/item/item-create/item-create.component';
+import {ItemUpdateComponent} from './components/item/item-update/item-update.component';
 
 const routes: Routes = [{
   path: '',
@@ -66,6 +72,30 @@ const routes: Routes = [{
   {
     path: 'classe/update/:id',
     component: ClasseUpdateComponent
+  },
+  {
+    path: 'title',
+    component: TitleCrudComponent
+  },
+  {
+    path: 'title/create',
+    component: TitleCreateComponent
+  },
+  {
+    path: 'title/update/:id',
+    component: TitleUpdateComponent
+  },
+  {
+    path: 'item',
+    component: ItemCrudComponent
+  },
+  {
+    path: 'item/create',
+    component: ItemCreateComponent
+  },
+  {
+    path: 'item/update/:id',
+    component: ItemUpdateComponent
   }
 ];
 

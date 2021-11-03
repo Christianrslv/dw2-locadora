@@ -78,6 +78,15 @@ import {ClasseDeleteComponent} from './components/classe/classe-delete/classe-de
 import {ClasseUpdateComponent} from './components/classe/classe-update/classe-update.component';
 import {ClasseReadComponent} from './components/classe/classe-read/classe-read.component';
 import { TitleCrudComponent } from './views/title-crud/title-crud.component';
+import { TitleCreateComponent } from './components/title/title-create/title-create.component';
+import { TitleReadComponent } from './components/title/title-read/title-read.component';
+import { TitleDeleteComponent } from './components/title/title-delete/title-delete.component';
+import { TitleUpdateComponent } from './components/title/title-update/title-update.component';
+import { ItemCrudComponent } from './views/item-crud/item-crud.component';
+import { ItemCreateComponent } from './components/item/item-create/item-create.component';
+import { ItemDeleteComponent } from './components/item/item-delete/item-delete.component';
+import { ItemReadComponent } from './components/item/item-read/item-read.component';
+import { ItemUpdateComponent } from './components/item/item-update/item-update.component';
 
 @NgModule({
   exports: [
@@ -155,7 +164,16 @@ import { TitleCrudComponent } from './views/title-crud/title-crud.component';
     ClasseDeleteComponent,
     ClasseUpdateComponent,
     ClasseReadComponent,
-    TitleCrudComponent
+    TitleCrudComponent,
+    TitleCreateComponent,
+    TitleReadComponent,
+    TitleDeleteComponent,
+    TitleUpdateComponent,
+    ItemCrudComponent,
+    ItemCreateComponent,
+    ItemDeleteComponent,
+    ItemReadComponent,
+    ItemUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -175,13 +193,13 @@ import { TitleCrudComponent } from './views/title-crud/title-crud.component';
     MatPaginatorModule,
     MatSortModule,
     MatDatepickerModule,
-
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
