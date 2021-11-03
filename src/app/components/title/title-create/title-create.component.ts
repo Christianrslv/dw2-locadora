@@ -47,8 +47,6 @@ export class TitleCreateComponent implements OnInit {
     name: 'DOIS'
   };
 
-  titleForm = new FormControl();
-
   title: Title = {
     name: '',
     year: '',

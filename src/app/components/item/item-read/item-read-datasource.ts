@@ -1,21 +1,21 @@
-import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { map } from 'rxjs/operators';
-import { Observable, of as observableOf, merge } from 'rxjs';
-import { Title } from '../title.model';
+import {DataSource} from '@angular/cdk/collections';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {map} from 'rxjs/operators';
+import {merge, Observable, of as observableOf} from 'rxjs';
+import {Item} from '../item.model';
 
-export class TitleDataSource extends DataSource<Title> {
-  data: Title[];
+export class ItemDatasource extends DataSource<Item> {
+  data: Item[];
   paginator: MatPaginator;
   sort: MatSort;
 
-  constructor(titles: Title[]) {
+  constructor(items: Item[]) {
     super();
-    this.data = titles;
+    this.data = items;
   }
 
-  connect(): Observable<Title[]> {
+  connect(): Observable<Item[]> {
     const dataMutations = [
       observableOf(this.data),
       this.paginator.page,
@@ -28,16 +28,17 @@ export class TitleDataSource extends DataSource<Title> {
   }
 
   // tslint:disable-next-line:typedef
-  disconnect() {}
+  disconnect() {
+  }
 
   // tslint:disable-next-line:typedef
-  private getPagedData(data: Title[]) {
+  private getPagedData(data: Item[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
 
   // tslint:disable-next-line:typedef
-  private getSortedData(data: Title[]) {
+  private getSortedData(data: Item[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -45,12 +46,16 @@ export class TitleDataSource extends DataSource<Title> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        case 'year': return compare(a.year, b.year, isAsc);
-        case 'synopsis': return compare(a.synopsis, b.synopsis, isAsc);
-        case 'category': return compare(a.category, b.category, isAsc);
-        default: return 0;
+        case 'numSerie':
+          return compare(+a.numSerie, +b.numSerie, isAsc);
+        case 'id':
+          return compare(+a.id, +b.id, isAsc);
+        case 'dtAcquisition':
+          return compare(a.dtAcquisition, b.dtAcquisition, isAsc);
+        case 'typeItem':
+          return compare(a.typeItem, b.typeItem, isAsc);
+        default:
+          return 0;
       }
     });
   }

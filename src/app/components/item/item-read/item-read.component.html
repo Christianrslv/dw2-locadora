@@ -1,1 +1,57 @@
-<p>item-read works!</p>
+<div class="mat-elevation-z4">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- numSerie Column -->
+    <ng-container matColumnDef="numSerie">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero de Serie</th>
+      <td mat-cell *matCellDef="let row">{{row.numSerie}}</td>
+    </ng-container>
+
+    <!-- dtAcquisition Column -->
+    <ng-container matColumnDef="dtAcquisition">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data de aquisição</th>
+      <td mat-cell *matCellDef="let row">{{row.dtAcquisition}}</td>
+    </ng-container>
+
+    <!-- typeItem Column -->
+    <ng-container matColumnDef="typeItem">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Item</th>
+      <td mat-cell *matCellDef="let row">{{row.typeItem}}</td>
+    </ng-container>
+
+    <!-- title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</th>
+      <td mat-cell *matCellDef="let row">{{row.title.name}}</td>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Ações</th>
+      <td mat-cell *matCellDef="let row">
+        <a routerLink="/actor/update/{{ row.id }}" class="edit">
+          <i class="material-icons">
+            edit
+          </i>
+        </a>
+        <a routerLink="/actor" (click)="deleteTitle( row.id )" class="delete">
+          <i class="material-icons">
+            delete
+          </i>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 50]">
+  </mat-paginator>
+</div>
