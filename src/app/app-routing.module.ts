@@ -20,6 +20,12 @@ import {TitleUpdateComponent} from './components/title/title-update/title-update
 import {ItemCrudComponent} from './views/item-crud/item-crud.component';
 import {ItemCreateComponent} from './components/item/item-create/item-create.component';
 import {ItemUpdateComponent} from './components/item/item-update/item-update.component';
+import {CustomerCrudComponent} from './views/customer-crud/customer-crud.component';
+import {CustomerCreateComponent} from './components/customer/customer-create/customer-create.component';
+import {CustomerUpdateComponent} from './components/customer/customer-update/customer-update.component';
+import {LocationCrudComponent} from './views/location-crud/location-crud.component';
+import {LocationCreateComponent} from './components/location/location-create/location-create.component';
+import {LocationUpdateComponent} from './components/location/location-update/location-update.component';
 
 const routes: Routes = [{
   path: '',
@@ -96,6 +102,30 @@ const routes: Routes = [{
   {
     path: 'item/update/:id',
     component: ItemUpdateComponent
+  },
+  {
+    path: 'customer',
+    component: CustomerCrudComponent
+  },
+  {
+    path: 'customer/create',
+    component: CustomerCreateComponent
+  },
+  {
+    path: 'customer/update/:id',
+    component: CustomerUpdateComponent
+  },
+  {
+    path: 'location',
+    component: LocationCrudComponent
+  },
+  {
+    path: 'location/create',
+    component: LocationCreateComponent
+  },
+  {
+    path: 'location/update/:id',
+    component: LocationUpdateComponent
   }
 ];
 

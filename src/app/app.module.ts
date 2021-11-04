@@ -77,16 +77,26 @@ import {ClasseCreateComponent} from './components/classe/classe-create/classe-cr
 import {ClasseDeleteComponent} from './components/classe/classe-delete/classe-delete.component';
 import {ClasseUpdateComponent} from './components/classe/classe-update/classe-update.component';
 import {ClasseReadComponent} from './components/classe/classe-read/classe-read.component';
-import { TitleCrudComponent } from './views/title-crud/title-crud.component';
-import { TitleCreateComponent } from './components/title/title-create/title-create.component';
-import { TitleReadComponent } from './components/title/title-read/title-read.component';
-import { TitleDeleteComponent } from './components/title/title-delete/title-delete.component';
-import { TitleUpdateComponent } from './components/title/title-update/title-update.component';
-import { ItemCrudComponent } from './views/item-crud/item-crud.component';
-import { ItemCreateComponent } from './components/item/item-create/item-create.component';
-import { ItemDeleteComponent } from './components/item/item-delete/item-delete.component';
-import { ItemReadComponent } from './components/item/item-read/item-read.component';
-import { ItemUpdateComponent } from './components/item/item-update/item-update.component';
+import {TitleCrudComponent} from './views/title-crud/title-crud.component';
+import {TitleCreateComponent} from './components/title/title-create/title-create.component';
+import {TitleReadComponent} from './components/title/title-read/title-read.component';
+import {TitleDeleteComponent} from './components/title/title-delete/title-delete.component';
+import {TitleUpdateComponent} from './components/title/title-update/title-update.component';
+import {ItemCrudComponent} from './views/item-crud/item-crud.component';
+import {ItemCreateComponent} from './components/item/item-create/item-create.component';
+import {ItemDeleteComponent} from './components/item/item-delete/item-delete.component';
+import {ItemReadComponent} from './components/item/item-read/item-read.component';
+import {ItemUpdateComponent} from './components/item/item-update/item-update.component';
+import {CustomerCrudComponent} from './views/customer-crud/customer-crud.component';
+import {CustomerCreateComponent} from './components/customer/customer-create/customer-create.component';
+import {CustomerDeleteComponent} from './components/customer/customer-delete/customer-delete.component';
+import {CustomerReadComponent} from './components/customer/customer-read/customer-read.component';
+import {CustomerUpdateComponent} from './components/customer/customer-update/customer-update.component';
+import {LocationCrudComponent} from './views/location-crud/location-crud.component';
+import { LocationCreateComponent } from './components/location/location-create/location-create.component';
+import { LocationReadComponent } from './components/location/location-read/location-read.component';
+import { LocationDeleteComponent } from './components/location/location-delete/location-delete.component';
+import { LocationUpdateComponent } from './components/location/location-update/location-update.component';
 
 @NgModule({
   exports: [
@@ -173,7 +183,17 @@ import { ItemUpdateComponent } from './components/item/item-update/item-update.c
     ItemCreateComponent,
     ItemDeleteComponent,
     ItemReadComponent,
-    ItemUpdateComponent
+    ItemUpdateComponent,
+    CustomerCrudComponent,
+    CustomerCreateComponent,
+    CustomerDeleteComponent,
+    CustomerReadComponent,
+    CustomerUpdateComponent,
+    LocationCrudComponent,
+    LocationCreateComponent,
+    LocationReadComponent,
+    LocationDeleteComponent,
+    LocationUpdateComponent
   ],
   imports: [
     BrowserModule,
