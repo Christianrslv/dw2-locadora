@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Customer} from '../customer.model';
+import {CustomerService} from '../customer.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-customer-create',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerCreateComponent implements OnInit {
 
-  constructor() { }
+  customer: Customer = {
+    name: '',
+    numInscricao: '',
+    dtNascimento: '',
+    sexo: '',
+    estahAtivo: true,
+    cpf: '',
+    endereco: '',
+    tel: ''
+  };
+
+  constructor(private customerService: CustomerService,
+              private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
+  createCustomer(): void {
+    this.customerService.create(this.customer)
+      .subscribe(() => {
+        this.customerService.showMessage('Cliente cadastrada com sucesso!');
+        this.router.navigate(['/customer']);
+      });
+  }
+
+  cancel(): void {
+    this.router.navigate(['/customer']);
+  }
 }
