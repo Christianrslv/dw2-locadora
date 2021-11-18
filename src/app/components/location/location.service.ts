@@ -10,7 +10,7 @@ import {LocationModel} from './location.model';
 })
 export class LocationService {
 
-  baseUrl = 'http://localhost:3801/location';
+  baseUrl = 'http://localhost:8080/locacao';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

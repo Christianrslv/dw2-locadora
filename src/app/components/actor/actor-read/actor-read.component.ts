@@ -31,6 +31,7 @@ export class ActorReadComponent implements OnInit {
   ngOnInit(): void {
     this.actorService.read().subscribe(actors => {
       this.actors = actors;
+      console.log(this.actors);
       this.afterLoadActors();
     });
   }

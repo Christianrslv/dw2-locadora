@@ -9,7 +9,7 @@ import {Director} from './director.model';
 })
 export class DirectorService {
 
-  baseUrl = 'http://localhost:3801/director';
+  baseUrl = 'http://localhost:8080/diretor';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

@@ -9,7 +9,7 @@ import {Classe} from './classe.model';
 })
 export class ClasseService {
 
-  baseUrl = 'http://localhost:3801/classe';
+  baseUrl = 'http://localhost:8080/classe';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

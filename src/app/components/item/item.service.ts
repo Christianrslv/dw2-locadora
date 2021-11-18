@@ -10,7 +10,7 @@ import {Item} from './item.model';
 })
 export class ItemService {
 
-  baseUrl = 'http://localhost:3801/item';
+  baseUrl = 'http://localhost:8080/item';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

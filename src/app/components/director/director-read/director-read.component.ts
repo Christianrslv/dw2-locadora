@@ -2,13 +2,10 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTable} from '@angular/material/table';
-import {ActorDataSource} from '../../actor/actor-read/actor-read-datasource';
 import {Director} from '../director.model';
 import {MatDialog} from '@angular/material/dialog';
 import {Router} from '@angular/router';
 import {DirectorService} from '../director.service';
-import {DialogConfirmationDelete} from '../../product/product-read2/product-read2.component';
-import {ActorDeleteComponent} from '../../actor/actor-delete/actor-delete.component';
 import {DirectorDeleteComponent} from '../director-delete/director-delete.component';
 import {DirectorDataSource} from './director-read-datasource';
 

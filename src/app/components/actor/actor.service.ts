@@ -9,7 +9,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class ActorService {
 
-  baseUrl = 'http://localhost:3801/actor';
+  baseUrl = 'http://localhost:8080/ator';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {
