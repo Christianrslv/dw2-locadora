@@ -4,13 +4,14 @@ import {HttpClient} from '@angular/common/http';
 import {Actor} from '../actor/actor.model';
 import {Observable} from 'rxjs';
 import {Title} from './title.model';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TitleService {
 
-  baseUrl = 'http://localhost:8080/titulo';
+  baseUrl = environment.url + 'titulo';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Classe} from '../classe.model';
 import {ClasseService} from '../classe.service';
 import {Router} from '@angular/router';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-classe-create',
@@ -24,6 +25,7 @@ export class ClasseCreateComponent implements OnInit {
   }
 
   createActor(): void {
+    console.log(this.classe);
     this.classeService.create(this.classe)
       .subscribe(() => {
         this.classeService.showMessage('Classe cadastrada com sucesso!');
@@ -32,6 +34,6 @@ export class ClasseCreateComponent implements OnInit {
   }
 
   cancel(): void {
-    this.router.navigate(['/actor']);
+    this.router.navigate(['/classe']);
   }
 }

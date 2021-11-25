@@ -3,13 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {Director} from './director.model';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DirectorService {
 
-  baseUrl = 'http://localhost:8080/diretor';
+  baseUrl = environment.url + 'diretor';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

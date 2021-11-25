@@ -22,7 +22,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Diretor</mat-label>
         <mat-select [(ngModel)]="title.director" name="director">
-          <mat-option *ngFor="let director of directors" [value]="director.id">
+          <mat-option *ngFor="let director of directors" [value]="director">
             {{director.name}}
           </mat-option>
         </mat-select>
@@ -31,7 +31,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Classe</mat-label>
         <mat-select [(ngModel)]="title.classe" name="classe">
-          <mat-option *ngFor="let classe of classes" [value]="classe.id">
+          <mat-option *ngFor="let classe of classes" [value]="classe">
             {{classe.name}}
           </mat-option>
         </mat-select>
@@ -40,7 +40,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Atores</mat-label>
         <mat-select [(ngModel)]="title.actors" name="actors" multiple>
-          <mat-option *ngFor="let actor of actors" [value]="actor.id">
+          <mat-option *ngFor="let actor of actors" [value]="actor">
             {{actor.name}}
           </mat-option>
         </mat-select>

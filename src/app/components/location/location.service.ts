@@ -4,13 +4,14 @@ import {HttpClient} from '@angular/common/http';
 import {Title} from '../title/title.model';
 import {Observable} from 'rxjs';
 import {LocationModel} from './location.model';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
 
-  baseUrl = 'http://localhost:8080/locacao';
+  baseUrl = environment.url + 'locacao';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

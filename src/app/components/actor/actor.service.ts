@@ -3,13 +3,14 @@ import {Actor} from './actor.model';
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActorService {
 
-  baseUrl = 'http://localhost:8080/ator';
+  baseUrl = environment.url + '/ator';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {

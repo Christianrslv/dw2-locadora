@@ -3,13 +3,14 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Classe} from './classe.model';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClasseService {
 
-  baseUrl = 'http://localhost:8080/classe';
+  baseUrl = environment.url + 'classe';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {
