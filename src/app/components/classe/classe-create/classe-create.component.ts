@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Classe} from '../classe.model';
 import {ClasseService} from '../classe.service';
 import {Router} from '@angular/router';
-import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-classe-create',

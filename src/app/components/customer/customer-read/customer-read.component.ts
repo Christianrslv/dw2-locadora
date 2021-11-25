@@ -21,7 +21,7 @@ export class CustomerReadComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<Customer>;
   dataSource: CustomerDataSource;
   customers: Customer[];
-  displayedColumns = ['name', 'numInscricao', 'dtNascimento', 'sexo', 'cpf', 'tel'];
+  displayedColumns = ['name', 'numInscricao', 'dtNascimento', 'sexo', 'cpf', 'tel', 'action'];
 
   constructor(private customerService: CustomerService,
               private dialog: MatDialog,

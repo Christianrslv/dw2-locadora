@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://dw2-locadora-backend.herokuapp.com/'
-  // url: 'http://192.168.6.116:8080/'
+  // url: 'https://dw2-locadora-backend.herokuapp.com/'
+  url: 'http://localhost:8080/'
 };
 
 /*

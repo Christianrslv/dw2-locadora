@@ -6,16 +6,16 @@
         <input matInput placeholder="Nome"
                [(ngModel)]="classe.name" name="name">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Valor"
-               [(ngModel)]="classe.value" name="value">
-      </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Data de devolução</mat-label>
         <input matInput [matDatepicker]="picker"
                [(ngModel)]="classe.returnDate" name="returnDate">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Valor"
+               [(ngModel)]="classe.value" name="value">
       </mat-form-field>
     </form>
     <button mat-raised-button (click)="createActor()" color="primary">

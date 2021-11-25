@@ -10,7 +10,7 @@ import {environment} from '../../../environments/environment';
 })
 export class CustomerService {
 
-  baseUrl = environment.url + 'cliente';
+  baseUrl = environment.url + 'socio';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {
