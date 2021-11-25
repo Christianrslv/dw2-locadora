@@ -2,12 +2,10 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTable} from '@angular/material/table';
-import {TitleDataSource} from '../../title/title-read/title-read-datasource';
 import {Item} from '../item.model';
 import {ItemService} from '../item.service';
 import {MatDialog} from '@angular/material/dialog';
 import {Router} from '@angular/router';
-import {TitleDeleteComponent} from '../../title/title-delete/title-delete.component';
 import {ItemDatasource} from './item-read-datasource';
 import {ItemDeleteComponent} from '../item-delete/item-delete.component';
 
@@ -23,7 +21,7 @@ export class ItemReadComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<Item>;
   dataSource: ItemDatasource;
   items: Item[];
-  displayedColumns = ['numSerie', 'dtAcquisition', 'typeItem', 'title'];
+  displayedColumns = ['numSerie', 'dtAcquisition', 'typeItem', 'title', 'action'];
 
   constructor(private itemService: ItemService,
               private dialog: MatDialog,

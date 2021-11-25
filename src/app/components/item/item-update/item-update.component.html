@@ -1,1 +1,38 @@
-<p>item-update works!</p>
+<div class="container">
+  <mat-card class="card mat-elevation-z4">
+    <mat-card-title>Novo Item</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Numero de Serie"
+               [(ngModel)]="item.numSerie" name="numSerie">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Data de aquisição</mat-label>
+        <input matInput [matDatepicker]="picker"
+               [(ngModel)]="item.dtAcquisition" name="dtAcquisition">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Tipo de Item"
+               [(ngModel)]="item.typeItem" name="typeItem">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Titulo</mat-label>
+        <mat-select [(ngModel)]="item.title" name="title">
+          <mat-option *ngFor="let title of titles" [value]="title">
+            {{title.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </form>
+    <button mat-raised-button (click)="updateItem()" color="primary">
+      Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+      Cancelar
+    </button>
+  </mat-card>
+</div>

@@ -21,7 +21,7 @@ export class LocationReadComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<LocationModel>;
   dataSource: LocationDataSource;
   locations: LocationModel[];
-  displayedColumns = ['dtLocacao', 'dtDevolucaoPrevista', 'dtDevolucaoEfetiva', 'valorCobrado', 'multaCobrada', 'item', 'customer'];
+  displayedColumns = ['dtLocacao', 'dtDevolucaoPrevista', 'dtDevolucaoEfetiva', 'valorCobrado', 'multaCobrada', 'item', 'customer', 'action'];
 
   constructor(private locationService: LocationService,
               private dialog: MatDialog,

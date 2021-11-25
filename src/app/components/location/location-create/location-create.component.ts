@@ -113,7 +113,7 @@ export class LocationCreateComponent implements OnInit {
   }
 
   createLocation(): void {
-    console.log(this.title);
+    console.log(this.location);
     this.locationService.create(this.location)
       .subscribe(() => {
         this.locationService.showMessage('Locação cadastrado com sucesso!');

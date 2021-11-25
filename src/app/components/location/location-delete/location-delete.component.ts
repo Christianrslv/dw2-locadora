@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
+import {LocationService} from '../location.service';
 
 @Component({
   selector: 'app-location-delete',
   templateUrl: './location-delete.component.html',
   styleUrls: ['./location-delete.component.css']
 })
-export class LocationDeleteComponent implements OnInit {
+export class LocationDeleteComponent {
 
-  constructor() { }
+  constructor(private locationService: LocationService,
+              public dialogRef: MatDialogRef<LocationDeleteComponent>) {
+  }
 
-  ngOnInit(): void {
+  onNoClick(): void {
+    this.dialogRef.close(false);
+  }
+
+  deleteProduct(): void {
+    this.dialogRef.close(true);
   }
 
 }

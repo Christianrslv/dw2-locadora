@@ -6,9 +6,12 @@
         <input matInput placeholder="Numero de Serie"
                [(ngModel)]="item.numSerie" name="numSerie">
       </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Data de aquisição"
+      <mat-form-field appearance="fill">
+        <mat-label>Data de aquisição</mat-label>
+        <input matInput [matDatepicker]="picker"
                [(ngModel)]="item.dtAcquisition" name="dtAcquisition">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Tipo de Item"
@@ -18,7 +21,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Titulo</mat-label>
         <mat-select [(ngModel)]="item.title" name="title">
-          <mat-option *ngFor="let title of titles" [value]="title.id">
+          <mat-option *ngFor="let title of titles" [value]="title">
             {{title.name}}
           </mat-option>
         </mat-select>

@@ -4,21 +4,24 @@
     <form>
       <mat-form-field appearance="fill">
         <mat-label>Data de Locação</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker"
+               [(ngModel)]="location.dtLocacao" name="dtLocacao">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Data de Devolução Prevista</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <input matInput [matDatepicker]="picker2"
+               [(ngModel)]="location.dtDevolucaoPrevista" name="dtDevolucaoPrevista">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Data de Devolução Efetiva</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <input matInput [matDatepicker]="picker3"
+               [(ngModel)]="location.dtDevolucaoEfetiva" name="dtDevolucaoEfetiva">
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Valor Cobrado"
@@ -31,7 +34,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Item</mat-label>
         <mat-select [(ngModel)]="location.item" name="item">
-          <mat-option *ngFor="let item of items" [value]="item.id">
+          <mat-option *ngFor="let item of items" [value]="item">
             {{item.typeItem}}
           </mat-option>
         </mat-select>
@@ -40,7 +43,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Cliente</mat-label>
         <mat-select [(ngModel)]="location.customer" name="customer">
-          <mat-option *ngFor="let customer of customers" [value]="customer.id">
+          <mat-option *ngFor="let customer of customers" [value]="customer">
             {{customer.name}}
           </mat-option>
         </mat-select>
