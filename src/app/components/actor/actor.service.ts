@@ -10,7 +10,7 @@ import {environment} from '../../../environments/environment';
 })
 export class ActorService {
 
-  baseUrl = environment.url + '/ator';
+  baseUrl = environment.url + 'ator';
 
   constructor(private snackBar: MatSnackBar,
               private http: HttpClient) {
