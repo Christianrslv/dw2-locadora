@@ -1,1 +1,7 @@
-<p>title-delete works!</p>
+<div mat-dialog-content>
+  <h1>Tem certeza que deseja excluir este registro?</h1>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="onNoClick()">Cancelar</button>
+  <button mat-raised-button (click)="deleteProduct()" cdkFocusInitial>Sim</button>
+</div>

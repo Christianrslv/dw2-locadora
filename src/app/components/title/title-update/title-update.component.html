@@ -1,1 +1,56 @@
-<p>title-update works!</p>
+<div class="container">
+  <mat-card class="card mat-elevation-z4">
+    <mat-card-title>Alterando Titulo</mat-card-title>
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Nome"
+               [(ngModel)]="title.name" name="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Ano"
+               [(ngModel)]="title.year" name="year">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Sinopse"
+               [(ngModel)]="title.synopsis" name="synopsis">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Categoria"
+               [(ngModel)]="title.category" name="category">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Diretor</mat-label>
+        <mat-select [(ngModel)]="title.director" name="director">
+          <mat-option *ngFor="let director of directors" [value]="director">
+            {{director.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Classe</mat-label>
+        <mat-select [(ngModel)]="title.classe" name="classe">
+          <mat-option *ngFor="let classe of classes" [value]="classe">
+            {{classe.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Atores</mat-label>
+        <mat-select [(ngModel)]="title.actors" name="actors" multiple>
+          <mat-option *ngFor="let actor of actors" [value]="actor">
+            {{actor.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="updateTitle()" color="primary">
+      Salvar
+    </button>
+    <button mat-raised-button (click)="cancel()">
+      Cancelar
+    </button>
+  </mat-card>
+</div>
