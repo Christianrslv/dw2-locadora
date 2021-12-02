@@ -9,8 +9,30 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./customer-update.component.css']
 })
 export class CustomerUpdateComponent implements OnInit {
+  socio: Customer = {
+    name: '',
+    numInscricao: '',
+    dtNascimento: '',
+    sexo: '',
+    estahAtivo: true,
+    cpf: '',
+    endereco: '',
+    tel: ''
+  };
 
-  customer: Customer;
+  dependente: Customer = {
+    name: '',
+    numInscricao: '',
+    dtNascimento: '',
+    sexo: '',
+    estahAtivo: true,
+    cpf: '',
+    endereco: '',
+    tel: '',
+    socio: this.socio
+  };
+
+  socios: Customer[] = [this.socio];
 
   constructor(private customerService: CustomerService,
               private router: Router,
@@ -18,17 +40,42 @@ export class CustomerUpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.customerService.read()
+      .subscribe(
+        socios => {
+          this.socios = socios;
+          this.getCliente();
+        },
+        error => console.log('Erro Socios')
+      );
+
+  }
+
+  getCliente(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.customerService.readById(id).subscribe(customer => {
-      this.customer = customer;
+      this.socio = customer;
+      if (!this.socio.cpf) {
+        this.dependente = this.socio;
+      }
+      console.log(this.socio);
     });
   }
 
-  updateCustomer(): void {
-    this.customerService.update(this.customer).subscribe(() => {
-      this.customerService.showMessage('Cliente alterado com sucesso!');
-      this.router.navigate(['/customer']);
-    });
+  updateSocio(): void {
+    this.customerService.updateSocio(this.socio)
+      .subscribe(() => {
+        this.customerService.showMessage('Cliente atualizado com sucesso!');
+        this.router.navigate(['/customer']);
+      });
+  }
+
+  updateDependente(): void {
+    this.customerService.updateDependente(this.dependente)
+      .subscribe(() => {
+        this.customerService.showMessage('Cliente atualizado com sucesso!');
+        this.router.navigate(['/customer']);
+      });
   }
 
   cancel(): void {

@@ -5,7 +5,8 @@ export interface Customer {
   dtNascimento: string;
   sexo: string;
   estahAtivo: boolean;
-  cpf: string;
-  endereco: string;
-  tel: string;
+  cpf?: string;
+  endereco?: string;
+  tel?: string;
+  socio?: Customer;
 }

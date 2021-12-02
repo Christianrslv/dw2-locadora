@@ -50,10 +50,6 @@ export class CustomerDataSource extends DataSource<Customer> {
           return compare(a.name, b.name, isAsc);
         case 'id':
           return compare(+a.id, +b.id, isAsc);
-        case 'cpf':
-          return compare(a.id, b.id, isAsc);
-        case 'tel':
-          return compare(a.id, b.id, isAsc);
         case 'sexo':
           return compare(a.id, b.id, isAsc);
         case 'numInscricao':

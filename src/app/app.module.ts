@@ -98,6 +98,8 @@ import { LocationReadComponent } from './components/location/location-read/locat
 import { LocationDeleteComponent } from './components/location/location-delete/location-delete.component';
 import { LocationUpdateComponent } from './components/location/location-update/location-update.component';
 
+
+
 @NgModule({
   exports: [
     MatSidenavModule,
@@ -219,7 +221,8 @@ import { LocationUpdateComponent } from './components/location/location-update/l
     HttpClientModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

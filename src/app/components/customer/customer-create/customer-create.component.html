@@ -1,44 +1,93 @@
-<div class="container">
-  <mat-card class="card mat-elevation-z4">
-    <mat-card-title>Novo Cliente</mat-card-title>
-    <form>
-      <mat-form-field>
-        <input matInput placeholder="Nome"
-               [(ngModel)]="customer.name" name="name">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Numero de inscricao"
-               [(ngModel)]="customer.numInscricao" name="numInscricao">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Sexo"
-               [(ngModel)]="customer.sexo" name="sexo">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Data de nascimento</mat-label>
-        <input matInput [matDatepicker]="picker"
-               [(ngModel)]="customer.dtNascimento" name="dtNascimento">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="CPF"
-               [(ngModel)]="customer.cpf" name="cpf">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Endereço"
-               [(ngModel)]="customer.endereco" name="endereco">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Telefone"
-               [(ngModel)]="customer.tel" name="tel">
-      </mat-form-field>
-    </form>
-    <button mat-raised-button (click)="createCustomer()" color="primary">
-      Salvar
-    </button>
-    <button mat-raised-button (click)="cancel()">
-      Cancelar
-    </button>
-  </mat-card>
-</div>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Novo Socio">
+    <div class="container">
+      <mat-card class="card mat-elevation-z4">
+        <mat-card-title>Novo Socio</mat-card-title>
+        <form>
+          <mat-form-field>
+            <input matInput placeholder="Nome"
+                   [(ngModel)]="socio.name" name="name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Numero de inscricao"
+                   [(ngModel)]="socio.numInscricao" name="numInscricao">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Sexo"
+                   [(ngModel)]="socio.sexo" name="sexo">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker"
+                   [(ngModel)]="socio.dtNascimento" name="dtNascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="CPF"
+                   [(ngModel)]="socio.cpf" name="cpf">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Endereço"
+                   [(ngModel)]="socio.endereco" name="endereco">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Telefone"
+                   [(ngModel)]="socio.tel" name="tel">
+          </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="createSocio()" color="primary">
+          Salvar
+        </button>
+        <button mat-raised-button (click)="cancel()">
+          Cancelar
+        </button>
+      </mat-card>
+    </div>
+  </mat-tab>
+
+
+  <mat-tab label="Novo Dependente">
+    <div class="container">
+      <mat-card class="card mat-elevation-z4">
+        <mat-card-title>Novo Dependente</mat-card-title>
+        <form>
+          <mat-form-field>
+            <input matInput placeholder="Nome"
+                   [(ngModel)]="dependente.name" name="name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Numero de inscricao"
+                   [(ngModel)]="dependente.numInscricao" name="numInscricao">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Sexo"
+                   [(ngModel)]="dependente.sexo" name="sexo">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker]="picker2"
+                   [(ngModel)]="dependente.dtNascimento" name="dtNascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Socio</mat-label>
+            <mat-select [(ngModel)]="dependente.socio" name="classe">
+              <mat-option *ngFor="let socio of socios" [value]="socio">
+                {{socio.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="createDependente()" color="primary">
+          Salvar
+        </button>
+        <button mat-raised-button (click)="cancel()">
+          Cancelar
+        </button>
+      </mat-card>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

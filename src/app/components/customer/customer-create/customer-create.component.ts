@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class CustomerCreateComponent implements OnInit {
 
-  customer: Customer = {
+  dependente: Customer = {
     name: '',
     numInscricao: '',
     dtNascimento: '',
@@ -21,15 +21,41 @@ export class CustomerCreateComponent implements OnInit {
     tel: ''
   };
 
+  socio: Customer = {
+    name: '',
+    numInscricao: '',
+    dtNascimento: '',
+    sexo: '',
+    estahAtivo: true,
+    cpf: '',
+    endereco: '',
+    tel: ''
+  };
+
+  socios: Customer[] = [this.socio];
+
   constructor(private customerService: CustomerService,
               private router: Router) {
   }
 
   ngOnInit(): void {
+    this.customerService.read()
+      .subscribe(
+        socios => this.socios = socios,
+        error => console.log('Erro Socios')
+      );
   }
 
-  createCustomer(): void {
-    this.customerService.create(this.customer)
+  createSocio(): void {
+    this.customerService.createSocio(this.socio)
+      .subscribe(() => {
+        this.customerService.showMessage('Cliente cadastrada com sucesso!');
+        this.router.navigate(['/customer']);
+      });
+  }
+
+  createDependente(): void {
+    this.customerService.createDependente(this.dependente)
       .subscribe(() => {
         this.customerService.showMessage('Cliente cadastrada com sucesso!');
         this.router.navigate(['/customer']);

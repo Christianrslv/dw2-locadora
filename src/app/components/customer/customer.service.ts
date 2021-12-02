@@ -24,21 +24,30 @@ export class CustomerService {
     });
   }
 
-  create(customer: Customer): Observable<Customer> {
+  createSocio(customer: Customer): Observable<Customer> {
     return this.http.post<Customer>(this.baseUrl, customer);
   }
 
+  createDependente(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(environment.url + 'dependente', customer);
+  }
+
   read(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.baseUrl);
+    return this.http.get<Customer[]>(environment.url + 'cliente');
   }
 
   readById(id: string): Observable<Customer> {
-    const url = `${this.baseUrl}/${id}`;
+    const url = `${environment.url + 'cliente'}/${id}`;
     return this.http.get<Customer>(url);
   }
 
-  update(customer: Customer): Observable<Customer> {
+  updateSocio(customer: Customer): Observable<Customer> {
     const url = `${this.baseUrl}/${customer.id}`;
+    return this.http.put<Customer>(url, customer);
+  }
+
+  updateDependente(customer: Customer): Observable<Customer> {
+    const url = `${environment.url + 'dependente'}/${customer.id}`;
     return this.http.put<Customer>(url, customer);
   }
 
